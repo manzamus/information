@@ -1,5 +1,4 @@
-import express from 'express'
-import successResponse from '../utils/successResponse'
+
 import User from '../model/User'
 import errorResponse from '../utils/errorResponse'
 class DataChequer{
@@ -26,7 +25,6 @@ class DataChequer{
                 const email=req.body.email;
                 const user=await User.findOne({email})
                 if(user){
-                    // console.log(user)
 return errorResponse(res,401,`email already exist`)
          
                 }else{
